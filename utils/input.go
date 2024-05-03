@@ -5,8 +5,10 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strings"
 	"strconv"
+	"strings"
+
+	"github.com/woaitsAryan/MyMandap-task/helpers"
 )
 
 func GetInputString(prompt string) string {
@@ -16,7 +18,12 @@ func GetInputString(prompt string) string {
 	if error != nil {
 		log.Fatalln(error)
 	}
-	return strings.TrimSpace(input)
+	input = strings.TrimSpace(input)
+
+	if input == ""{
+		input = helpers.FetchFact()
+	}
+	return input
 }
 
 func GetInputInt(prompt string) int {
