@@ -1,10 +1,7 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strings"
 
 	"github.com/woaitsAryan/MyMandap-task/helpers"
 	"github.com/woaitsAryan/MyMandap-task/models"
@@ -16,15 +13,12 @@ func init(){
 }
 
 func main() {
-    reader := bufio.NewReader(os.Stdin)
     for {
         fmt.Println("1. Send message between 2 users")
         fmt.Println("2. Broadcast message to all users")
         fmt.Println("3. View message log")
         fmt.Println("4. Exit")
-        fmt.Print("Enter choice: ")
-        choice, _ := reader.ReadString('\n')
-        choice = strings.TrimSpace(choice)
+        choice := utils.GetInputString("Enter choice: ")
         switch choice {
         case "1":
             senderID := utils.GetInputInt("Enter sender ID: ")
