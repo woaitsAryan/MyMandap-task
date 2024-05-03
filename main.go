@@ -12,7 +12,7 @@ import (
 )
 
 func init(){
-	models.SeedUsers(100)
+	models.SeedUsers(10)
 }
 
 func main() {
