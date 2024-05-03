@@ -12,13 +12,11 @@ func ViewLog(id int) {
 		return
 	}
 
-    fmt.Printf("Messages for user %d:\n", id)
-
     for _, message := range models.Users[id].Inbox {
         fmt.Printf("User %d received a message from User %d at %s: %s\n", id, message.Sender, message.Timestamp.Local().Format("2006-01-02 15:04:05"), message.Content)
     }
 	for _, message := range models.Users[id].Outbox {
-        fmt.Printf("User %d sent a message to User %d at %s: %s\n", id, message.Sender, message.Timestamp.Local().Format("2006-01-02 15:04:05"), message.Content)
+        fmt.Printf("User %d sent a message to User %d at %s: %s\n", id, message.Receiver, message.Timestamp.Local().Format("2006-01-02 15:04:05"), message.Content)
     }
 }
 

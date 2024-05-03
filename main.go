@@ -43,6 +43,8 @@ func main() {
                 helpers.ViewLog(user.ID)
             }
             return
+        default:
+            fmt.Println("Invalid choice")
         }
     }
 }
